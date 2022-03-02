@@ -1,0 +1,41 @@
+.gallery-item-wrapper {
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 3px 10px hsla(0, 0%, 52%, 0.3);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 400ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.015);
+    box-shadow: 0 3px 20px hsla(0, 0%, 52%, 0.4);
+    transition: all 400ms ease-in-out;
+  }
+
+  .flag {
+    width: 100%;
+    padding-top: 60%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .info {
+    padding: 2rem 1.5rem 4rem;
+
+    .country-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .country-info {
+      & > *:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+
+      .topic {
+        font-weight: 600;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.searchbox-wrapper {
+  display: flex;
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 8px hsla(0, 0%, 52%, 0.3);
+
+  .search-icon {
+    flex: 2 8 auto;
+    display: inline-block;
+    min-width: 3rem;
+    max-width: 5rem;
+    background-image: url(../../icons/search.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
+
+  .searchbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    flex: 8 2 auto;
+    padding: 1rem 1rem 1rem 2rem;
+    font-size: inherit;
+    font-family: inherit;
+    color: hsl(0, 0%, 52%);
+    outline: none;
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+}

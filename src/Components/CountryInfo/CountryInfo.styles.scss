@@ -1,0 +1,47 @@
+.countryinfo-wrapper {
+  padding: 0 2rem 4rem;
+
+  .flag {
+    width: 100%;
+    padding-top: 60%;
+    margin-bottom: 3rem;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .info {
+    & > *:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    .country-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .country-info {
+      & > *:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+
+      .topic {
+        font-weight: 600;
+      }
+    }
+
+    .borders-navigation {
+      .borders-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+
+      .borders-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  }
+}
