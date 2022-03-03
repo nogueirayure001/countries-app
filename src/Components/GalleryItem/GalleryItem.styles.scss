@@ -10,6 +10,16 @@
   overflow: hidden;
   transition: all 400ms ease-in-out;
 
+  &.dark {
+    color: #fff;
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0 3px 10px hsl(200, 15%, 8%);
+
+    &:hover {
+      box-shadow: 0 3px 20px hsl(200, 15%, 8%);
+    }
+  }
+
   &:hover {
     transform: scale(1.015);
     box-shadow: 0 3px 20px hsla(0, 0%, 52%, 0.4);

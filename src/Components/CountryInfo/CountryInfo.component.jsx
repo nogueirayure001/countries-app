@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 import ButtonLink from "../ButtonLink/ButtonLink.component";
 import "./CountryInfo.styles.scss";
 
-const CountryInfo = ({ countries, match, history }) => {
+const CountryInfo = ({ countries, match, lightTheme }) => {
   let country = null;
   let bordersCode = [];
   const borders = [];
@@ -29,7 +29,7 @@ const CountryInfo = ({ countries, match, history }) => {
   const countryBorders = borders.map((country) => {
     return (
       <li key={country.alpha3Code}>
-        <ButtonLink identifier={country.name} />
+        <ButtonLink identifier={country.name} lightTheme={lightTheme} />
       </li>
     );
   });

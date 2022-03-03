@@ -7,22 +7,27 @@ import Gallery from "../../Components/Gallery/Gallery.component";
 
 const Homepage = ({
   countries,
-  lightTheme,
   searchFilter,
   regionFilter,
   handleSearchInput,
   handleFilterInput,
+  lightTheme,
+  handleThemeToggle,
 }) => {
   return (
-    <div>
-      <PageHeader />
+    <div className={lightTheme ? "homepage" : "homepage dark"}>
+      <PageHeader
+        lightTheme={lightTheme}
+        handleThemeToggle={handleThemeToggle}
+      />
       <ControlsHomepage
         handleSearchInput={handleSearchInput}
         handleFilterInput={handleFilterInput}
         searchFilter={searchFilter}
         regionFilter={regionFilter}
+        lightTheme={lightTheme}
       />
-      <Gallery countries={countries} />
+      <Gallery countries={countries} lightTheme={lightTheme} />
     </div>
   );
 };

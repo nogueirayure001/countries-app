@@ -1,8 +1,9 @@
-.homepage {
+.countrypage {
   min-height: 100vh;
   background-color: hsl(0, 0%, 98%);
 
   &.dark {
+    color: #fff;
     background-color: hsl(207, 26%, 17%);
   }
 }

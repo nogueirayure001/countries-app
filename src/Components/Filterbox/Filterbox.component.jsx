@@ -59,7 +59,7 @@ class Filterbox extends React.Component {
     return regionFilter ? regionFilter : "Filter By Region";
   };
 
-  handleOnClickFilterbox = () => {
+  handleFocusFilterbox = () => {
     this.setState((prevState) => {
       return {
         optionsShowing: !prevState.optionsShowing,
@@ -74,14 +74,15 @@ class Filterbox extends React.Component {
   };
 
   render() {
-    const { handleFilterInput, regionFilter } = this.props;
+    const { handleFilterInput, regionFilter, lightTheme } = this.props;
 
     return (
       <div
-        className='select'
+        className={lightTheme ? "select" : "select dark"}
         role={"listbox"}
         tabIndex={0}
-        onClick={() => this.handleOnClickFilterbox()}
+        onFocus={() => this.handleFocusFilterbox()}
+        onBlur={() => this.handleFocusFilterbox()}
       >
         <div className='current-filter'>
           {this.currentFilterValue(regionFilter)}

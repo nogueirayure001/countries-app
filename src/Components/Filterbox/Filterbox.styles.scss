@@ -5,9 +5,28 @@
   max-width: 15rem;
   font-weight: 600;
   color: inherit;
+  border-radius: 0.5rem;
+  background-color: #fff;
   outline: none;
   cursor: pointer;
+  z-index: 1;
+  box-shadow: 0 3px 8px hsla(0, 0%, 52%, 0.4);
   transition: all 400ms ease-in-out;
+
+  &.dark {
+    color: #fff;
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0 3px 8px hsl(200, 15%, 8%);
+
+    &:focus {
+      box-shadow: 0 3px 20px hsl(200, 15%, 8%);
+    }
+
+    &::after {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(542%)
+        hue-rotate(271deg) brightness(116%) contrast(100%);
+    }
+  }
 
   &:focus {
     transition: all 400ms ease-in-out;
@@ -28,11 +47,10 @@
     background-size: contain;
   }
 
-  &,
   .options-wrapper {
     border-radius: 0.5rem;
-    background-color: #fff;
-    box-shadow: 0 2px 8px hsla(0, 0%, 52%, 0.3);
+    background-color: inherit;
+    box-shadow: inherit;
   }
 
   .current-filter {

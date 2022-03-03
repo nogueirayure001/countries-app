@@ -7,6 +7,19 @@
   background-color: #fff;
   box-shadow: 0 0 5px hsla(0, 0%, 52%, 0.5);
 
+  &.dark {
+    color: #fff;
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0 0px 5px hsl(200, 15%, 8%);
+
+    .theme-btn {
+      &-icon {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(2%)
+          saturate(542%) hue-rotate(271deg) brightness(116%) contrast(100%);
+      }
+    }
+  }
+
   .page-title {
     font-weight: 800;
     cursor: pointer;
