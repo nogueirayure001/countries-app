@@ -1,4 +1,6 @@
 .gallery-item-wrapper {
+  flex: 1 1 15.5rem;
+  max-width: 22rem;
   border-radius: 0.5rem;
   background-color: #fff;
   box-shadow: 0 3px 10px hsla(0, 0%, 52%, 0.3);
@@ -21,6 +23,7 @@
 
   .info {
     padding: 2rem 1.5rem 4rem;
+    color: inherit;
 
     .country-name {
       font-size: 1.3rem;

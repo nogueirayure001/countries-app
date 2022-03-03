@@ -12,6 +12,7 @@ body {
   height: 100%;
   font: 100%/1.5 "Nunito Sans", sans-serif;
   background-color: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
 }
 
 button,
@@ -19,6 +20,7 @@ input {
   font-size: inherit;
   font-family: inherit;
   line-height: inherit;
+  color: inherit;
   border: none;
   background-color: transparent;
 }

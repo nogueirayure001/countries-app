@@ -1,10 +1,18 @@
 .searchbox-wrapper {
+  flex: 1 1 28rem;
   display: flex;
-  width: 100%;
+  max-width: 35rem;
   border-radius: 0.5rem;
   background-color: #fff;
   overflow: hidden;
   box-shadow: 0 2px 8px hsla(0, 0%, 52%, 0.3);
+  transition: all 400ms ease-in-out;
+
+  &:focus-within {
+    transition: all 400ms ease-in-out;
+    transform: scale(1.025);
+    box-shadow: 0 3px 20px hsla(0, 0%, 52%, 0.4);
+  }
 
   .search-icon {
     flex: 2 8 auto;

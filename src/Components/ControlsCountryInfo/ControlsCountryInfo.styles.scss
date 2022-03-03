@@ -1,3 +1,9 @@
 .controls-country-info {
-  padding: 3rem 2rem 5rem;
+  padding: 3rem 3rem 5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .controls-country-info {
+    padding: 3rem;
+  }
 }

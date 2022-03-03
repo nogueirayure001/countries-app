@@ -4,8 +4,6 @@ import ButtonLink from "../ButtonLink/ButtonLink.component";
 import "./CountryInfo.styles.scss";
 
 const CountryInfo = ({ countries, match, history }) => {
-  // const baseUrl = "https://restcountries.com/v2";
-
   let country = null;
   let bordersCode = [];
   const borders = [];
@@ -39,10 +37,13 @@ const CountryInfo = ({ countries, match, history }) => {
   if (countries.length !== 0) {
     return (
       <main className='countryinfo-wrapper'>
-        <div
-          className='flag'
-          style={{ backgroundImage: `url(${country.flag})` }}
-        ></div>
+        <div className='flag-wrapper'>
+          <div
+            className='flag'
+            style={{ backgroundImage: `url(${country.flag})` }}
+          ></div>
+        </div>
+
         <section className='info'>
           <h2 className='country-name'>{country.name}</h2>
 
@@ -101,7 +102,7 @@ const CountryInfo = ({ countries, match, history }) => {
           </ul>
 
           <nav className='borders-navigation'>
-            <h3 className='borders-title'>Border Countries</h3>
+            <h3 className='borders-title'>Border Countries:</h3>
 
             <ul className='borders-links'>{countryBorders}</ul>
           </nav>
