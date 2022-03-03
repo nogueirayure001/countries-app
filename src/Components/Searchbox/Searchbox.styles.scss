@@ -2,11 +2,27 @@
   flex: 1 1 28rem;
   display: flex;
   max-width: 35rem;
+  color: hsl(0, 0%, 52%);
   border-radius: 0.5rem;
   background-color: #fff;
   overflow: hidden;
   box-shadow: 0 2px 8px hsla(0, 0%, 52%, 0.3);
   transition: all 400ms ease-in-out;
+
+  &.dark {
+    color: #fff;
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: 0 2px 8px hsl(200, 15%, 8%);
+
+    &:focus-within {
+      box-shadow: 0 3px 20px hsl(200, 15%, 8%);
+    }
+
+    .search-icon {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(542%)
+        hue-rotate(271deg) brightness(116%) contrast(100%);
+    }
+  }
 
   &:focus-within {
     transition: all 400ms ease-in-out;
@@ -32,8 +48,11 @@
     padding: 1rem 1rem 1rem 2rem;
     font-size: inherit;
     font-family: inherit;
-    color: hsl(0, 0%, 52%);
     outline: none;
+
+    &::placeholder {
+      color: inherit;
+    }
 
     &::-webkit-search-cancel-button {
       display: none;

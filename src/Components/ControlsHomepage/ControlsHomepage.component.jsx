@@ -8,16 +8,19 @@ const ControlsHomepage = ({
   handleFilterInput,
   searchFilter,
   regionFilter,
+  lightTheme,
 }) => {
   return (
     <section className='controls-homepage'>
       <Searchbox
         handleSearchInput={handleSearchInput}
         searchFilter={searchFilter}
+        lightTheme={lightTheme}
       />
       <Filterbox
         handleFilterInput={handleFilterInput}
         regionFilter={regionFilter}
+        lightTheme={lightTheme}
       />
     </section>
   );

@@ -3,10 +3,12 @@ import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 import "./GalleryItem.styles.scss";
 
-const GalleryItem = ({ country, history }) => {
+const GalleryItem = ({ country, history, lightTheme }) => {
   return (
     <div
-      className='gallery-item-wrapper'
+      className={
+        lightTheme ? "gallery-item-wrapper" : "gallery-item-wrapper dark"
+      }
       onClick={() => history.push(`/countries/${country.name}`)}
     >
       <div

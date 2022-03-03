@@ -18,7 +18,9 @@ class App extends React.Component {
       countries: [],
       searchFilter: "",
       regionFilter: "",
-      lightTheme: true,
+      lightTheme: JSON.parse(localStorage.getItem("theme"))
+        ? JSON.parse(localStorage.getItem("theme")).lightTheme
+        : true,
     };
   }
 
@@ -28,6 +30,8 @@ class App extends React.Component {
       .then((countries) => {
         this.setState({ countries: countries });
       });
+
+    console.log(this.state.lightTheme);
   }
 
   filterCountries = () => {
@@ -54,22 +58,34 @@ class App extends React.Component {
     this.setState({ regionFilter: region });
   };
 
+  handleThemeToggle = () => {
+    this.setState((prevState) => {
+      const newState = { lightTheme: !prevState.lightTheme };
+      localStorage.setItem("theme", JSON.stringify(newState));
+      return newState;
+    });
+  };
   render() {
     return (
       <Switch>
         <Route exact path={"/"}>
           <Homepage
             countries={this.filterCountries()}
-            lightTheme={this.state.lightTheme}
             searchFilter={this.state.searchFilter}
             regionFilter={this.state.regionFilter}
             handleSearchInput={this.handleSearchInput}
             handleFilterInput={this.handleFilterInput}
+            lightTheme={this.state.lightTheme}
+            handleThemeToggle={this.handleThemeToggle}
           />
         </Route>
 
         <Route path={"/countries/:countryId"}>
-          <Countrypage countries={this.state.countries} />
+          <Countrypage
+            countries={this.state.countries}
+            lightTheme={this.state.lightTheme}
+            handleThemeToggle={this.handleThemeToggle}
+          />
         </Route>
       </Switch>
     );
