@@ -2,10 +2,11 @@ import React from "react";
 import PageHeader from "../../Components/Pageheader/Pageheader.component";
 import CountryInfo from "../../Components/CountryInfo/CountryInfo.component";
 import ControlsCountryInfo from "../../Components/ControlsCountryInfo/ControlsCountryInfo.component";
+import Loading from "../../Components/Loading/Loading.component";
 import "./Countrypage.styles.scss";
 
 const Countrypage = ({ countries, lightTheme, handleThemeToggle }) => {
-  return (
+  return countries.length > 0 ? (
     <div className={lightTheme ? "countrypage" : "countrypage dark"}>
       <PageHeader
         lightTheme={lightTheme}
@@ -14,6 +15,8 @@ const Countrypage = ({ countries, lightTheme, handleThemeToggle }) => {
       <ControlsCountryInfo lightTheme={lightTheme} />
       <CountryInfo countries={countries} lightTheme={lightTheme} />
     </div>
+  ) : (
+    <Loading />
   );
 };
 

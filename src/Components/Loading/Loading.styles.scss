@@ -1,0 +1,68 @@
+@mixin keyframe($i, $degs) {
+  @keyframes rotate#{$i} {
+    to {
+      transform: rotate(#{$degs + 360}deg);
+    }
+  }
+}
+
+.loading-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .animation-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url(../../icons/planet.jpeg);
+    background-position: center;
+    background-size: inherit;
+
+    .ball-wrapper {
+      position: absolute;
+      left: calc(50% - 7.5px);
+      height: 100%;
+      width: 15px;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+
+      @for $i from 1 through 5 {
+        &:nth-of-type(#{$i}) {
+          animation-name: rotate#{$i};
+          animation-delay: #{$i * 0.1s};
+          transform: rotate(#{45 - $i * 15}deg);
+
+          @include keyframe($i, 45 - $i * 15);
+
+          .ball {
+            @if $i == 1 {
+              background-color: hsla(0, 100%, 50%, 1);
+            } @else if $i == 2 {
+              background-color: hsla(0, 100%, 50%, 0.9);
+            } @else if $i == 3 {
+              background-color: hsla(0, 100%, 50%, 0.8);
+            } @else if $i == 4 {
+              background-color: hsla(0, 100%, 50%, 0.7);
+            } @else if $i == 5 {
+              background-color: hsla(0, 100%, 50%, 0.6);
+            }
+          }
+        }
+      }
+
+      .ball {
+        width: 15px;
+        height: 15px;
+        transform: translateY(-50%);
+        border-radius: 50%;
+      }
+    }
+  }
+}

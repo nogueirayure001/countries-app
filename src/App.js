@@ -30,8 +30,6 @@ class App extends React.Component {
       .then((countries) => {
         this.setState({ countries: countries });
       });
-
-    console.log(this.state.lightTheme);
   }
 
   filterCountries = () => {

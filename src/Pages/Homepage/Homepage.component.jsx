@@ -1,9 +1,9 @@
 import React from "react";
 import "./Homepage.styles.scss";
-
 import PageHeader from "../../Components/Pageheader/Pageheader.component";
 import ControlsHomepage from "../../Components/ControlsHomepage/ControlsHomepage.component";
 import Gallery from "../../Components/Gallery/Gallery.component";
+import Loading from "../../Components/Loading/Loading.component";
 
 const Homepage = ({
   countries,
@@ -14,7 +14,7 @@ const Homepage = ({
   lightTheme,
   handleThemeToggle,
 }) => {
-  return (
+  return countries.length > 0 ? (
     <div className={lightTheme ? "homepage" : "homepage dark"}>
       <PageHeader
         lightTheme={lightTheme}
@@ -29,6 +29,8 @@ const Homepage = ({
       />
       <Gallery countries={countries} lightTheme={lightTheme} />
     </div>
+  ) : (
+    <Loading />
   );
 };
 

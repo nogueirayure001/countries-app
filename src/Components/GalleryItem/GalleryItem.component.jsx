@@ -19,7 +19,8 @@ const GalleryItem = ({ country, history, lightTheme }) => {
         <h2 className='country-name'>{country.name}</h2>
         <ul className='country-info'>
           <li>
-            <span className='topic'>Population:</span> {country.population}
+            <span className='topic'>Population:</span>{" "}
+            {parseInt(country.population).toLocaleString()}
           </li>
           <li>
             <span className='topic'>Region:</span> {country.region}
