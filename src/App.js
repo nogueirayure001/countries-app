@@ -1,8 +1,6 @@
-import { Route, Switch } from "react-router-dom";
 import React from "react";
-
+import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 import "./App.css";
-
 import Homepage from "./Pages/Homepage/Homepage.component";
 import Countrypage from "./Pages/Countrypage/Countrypage.component";
 

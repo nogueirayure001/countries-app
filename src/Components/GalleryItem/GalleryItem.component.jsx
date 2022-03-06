@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
-
 import "./GalleryItem.styles.scss";
 
 const GalleryItem = ({ country, history, lightTheme }) => {
