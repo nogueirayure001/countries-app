@@ -6,6 +6,7 @@ import Gallery from "../../Components/Gallery/Gallery.component";
 import Loading from "../../Components/Loading/Loading.component";
 
 const Homepage = ({
+  dataFetched,
   countries,
   searchFilter,
   regionFilter,
@@ -14,7 +15,7 @@ const Homepage = ({
   lightTheme,
   handleThemeToggle,
 }) => {
-  return countries.length > 0 ? (
+  return dataFetched ? (
     <div className={lightTheme ? "homepage" : "homepage dark"}>
       <PageHeader
         lightTheme={lightTheme}

@@ -13,6 +13,7 @@ class App extends React.Component {
     this.#baseUrl = "https://restcountries.com/v2";
 
     this.state = {
+      dataFetched: false,
       countries: [],
       searchFilter: "",
       regionFilter: "",
@@ -26,7 +27,7 @@ class App extends React.Component {
     fetch(`${this.#baseUrl}/all`)
       .then((response) => response.json())
       .then((countries) => {
-        this.setState({ countries: countries });
+        this.setState({ countries: countries, dataFetched: true });
       });
   }
 
@@ -66,6 +67,7 @@ class App extends React.Component {
       <Switch>
         <Route exact path={"/"}>
           <Homepage
+            dataFetched={this.state.dataFetched}
             countries={this.filterCountries()}
             searchFilter={this.state.searchFilter}
             regionFilter={this.state.regionFilter}
